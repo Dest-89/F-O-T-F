@@ -1,0 +1,5 @@
+body { font-family: "Georgia", serif; margin: 0; color: #1f2328; background: #f8f6f1; }
+.page { max-width: 840px; margin: 0 auto; padding: 48px 20px; }
+.hero h1 { font-size: 44px; margin: 12px 0; }
+.cta { display: inline-block; margin: 8px 12px 0 0; padding: 12px 18px; background: #1f2328; color: #fff; text-decoration: none; }
+.cta.secondary { background: #6a5d4d; }
