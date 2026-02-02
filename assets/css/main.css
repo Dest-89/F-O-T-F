@@ -1,5 +1,188 @@
-body { font-family: "Georgia", serif; margin: 0; color: #1f2328; background: #f8f6f1; }
-.page { max-width: 840px; margin: 0 auto; padding: 48px 20px; }
-.hero h1 { font-size: 44px; margin: 12px 0; }
-.cta { display: inline-block; margin: 8px 12px 0 0; padding: 12px 18px; background: #1f2328; color: #fff; text-decoration: none; }
-.cta.secondary { background: #6a5d4d; }
+:root {
+  --bg-color: #e0e5ec;
+  --text-color: #31344b;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+  --accent-color: #4b6cb7;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  color: var(--text-color);
+  background: var(--bg-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Neumorphic Containers */
+.hero, .value, .waitlist, .links {
+  background: var(--bg-color);
+  border-radius: 40px;
+  padding: 48px;
+  margin-bottom: 60px;
+  width: 100%;
+  box-shadow: 20px 20px 60px var(--shadow-dark),
+              -20px -20px 60px var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.hero:hover, .value:hover, .waitlist:hover {
+  transform: translateY(-5px);
+}
+
+/* Typography */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+  color: var(--text-color);
+}
+
+.subhead {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  max-width: 700px;
+  margin: 0 auto;
+  color: #444b6e;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+li {
+  padding: 24px;
+  background: var(--bg-color);
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px var(--shadow-dark),
+              -10px -10px 30px var(--shadow-light);
+  font-weight: 500;
+}
+
+/* Forms & Buttons */
+.encharge-form-group {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.encharge-form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444b6e;
+}
+
+.encharge-form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  background: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: inset 6px 6px 12px var(--shadow-dark),
+              inset -6px -6px 12px var(--shadow-light);
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.encharge-form-input:focus {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark),
+              inset -4px -4px 8px var(--shadow-light);
+}
+
+.encharge-form-submit-button, .cta {
+  display: inline-block;
+  padding: 18px 36px;
+  border: none;
+  background: var(--bg-color);
+  color: var(--accent-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  box-shadow: 10px 10px 20px var(--shadow-dark),
+              -10px -10px 20px var(--shadow-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  margin: 12px;
+}
+
+.encharge-form-submit-button:hover, .cta:hover {
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+              -5px -5px 10px var(--shadow-light);
+  transform: translateY(2px);
+}
+
+.encharge-form-submit-button:active, .cta:active {
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+              inset -5px -5px 10px var(--shadow-light);
+  transform: translateY(4px);
+}
+
+.cta.secondary {
+  color: #6a5d4d;
+}
+
+.fineprint {
+  font-size: 0.85rem;
+  margin-top: 24px;
+  opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .value, .waitlist {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.value { animation-delay: 0.2s; }
+.waitlist { animation-delay: 0.4s; }
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .page { padding: 40px 16px; }
+  .hero, .value, .waitlist { padding: 32px 24px; }
+}
