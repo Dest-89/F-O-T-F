@@ -56,7 +56,7 @@
           <input type="email" name="email" placeholder="you@email.com" required />
           <button type="submit">Join waitlist</button>
         </form>
-        <p class="fineprint">Paid access opens after 1,000 waitlist signups.</p>
+         <p class="fineprint">Paid access opens after 100 waitlist signups.</p>
       </section>
     </main>
     <script src="assets/js/main.js"></script>
@@ -267,7 +267,7 @@ git commit -m "chore: initial community landing"
 
 ---
 
-### Task 9: Launch switch after 1,000 waitlist signups
+### Task 9: Launch switch after 100 waitlist signups
 
 **Files:**
 - Modify: `index.html`

@@ -15,7 +15,7 @@
 - Community promise: no more dependency on page builders for entrepreneur sales-funnel building tasks.
 - Pricing: coming-soon style; deliver value first before paid launch.
 - Value-first offer: waitlist only (email collection with early access updates).
-- Paid pricing starts after 1000 waitlist signups.
+- Paid pricing starts after 100 waitlist signups.
 
 ## Technical Decisions
 - Static marketing site with GTM embedded; ThriveCart handles checkout.
